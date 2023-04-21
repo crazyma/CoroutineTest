@@ -4,12 +4,18 @@ import kotlinx.coroutines.flow.*
 private var job1: Job? = null
 
 fun main() {
-    job1 = StructureSample().run{
-        runJob1()
-    }
+//    job1 = StructureSample().run{
+//        runJob1()
+//    }
+//    runBlocking {
+//        delay(3_000)
+//        job1?.cancel()
+//        delay(10_000)
+//    }
     runBlocking {
-        delay(3_000)
-        job1?.cancel()
+        ErrorHandlingSample().apply{
+            test()
+        }
         delay(10_000)
     }
 }
